@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import {AngularMaterialMOdule } from './angular.material.module';
 import {PostsModule} from './posts/post.module';
 import {HttpClientModule ,HTTP_INTERCEPTORS} from '@angular/common/http';
-
-
 import { AppComponent } from './app.component';
 
 
