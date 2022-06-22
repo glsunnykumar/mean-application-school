@@ -13,13 +13,8 @@ constructor(private authService:AuthService){
 
 }
 
-  ngOnInit() {
+  ngOnInit(){
     this.authService.autoAuthUser();
-
   }
-//   storedPosts :Post[] =[];
 
-//   onPostCreated(post){
-//  this.storedPosts.push(post);
-//   }
 }

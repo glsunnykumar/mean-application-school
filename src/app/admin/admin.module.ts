@@ -23,12 +23,20 @@ import { DashboardmainComponent } from './dashboardmain/dashboardmain.component'
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatRadioModule} from '@angular/material/radio'
+import {AdminComponent} from './admin.component';
+import { StudentCreateComponent } from './students/student-create/student-create.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
 
   declarations :[
+    AdminComponent,
     DashboardComponent,
     NavigationDemoComponent,
     DashboardmainComponent,
+    StudentCreateComponent,
+    StudentListComponent,
   ],
   imports :[
     CommonModule,
@@ -48,6 +56,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatSelectModule,
+    MatRadioModule
 
   ]
 
