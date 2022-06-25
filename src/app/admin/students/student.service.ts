@@ -55,12 +55,16 @@ export class StudentService {
         });
       }))
       .subscribe(TransformedcatData => {
-        console.log(TransformedcatData);
         this.students = TransformedcatData;
         this.studentUpdated.next([...this.students]);
       });
 
   }
+
+  getStudent(id: string) {
+    return this.http.get<{ _id: string, name: string, fathername: string,mothername: string,category:string,address: string,studentclass: string, imagePath: string }>('http://localhost:3000/api/students/' + id)
+  }
+
 
 
   getStudentUpdatedListner(){

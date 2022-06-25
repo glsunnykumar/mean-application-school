@@ -17,7 +17,8 @@ const routes :Routes =[
   {path:'dashboard' , component:DashboardmainComponent},
   {path:'navigation', component:DashboardmainComponent},
   {path:'student-create', component:StudentCreateComponent},
-  {path:'students', component:StudentListComponent}
+  {path:'students', component:StudentListComponent},
+  {path :'students/edit/:id', component:StudentCreateComponent},
   ]
 }
 ]

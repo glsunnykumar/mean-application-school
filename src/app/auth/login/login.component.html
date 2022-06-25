@@ -1,4 +1,5 @@
-<div class="row top-buffer">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
 <mat-spinner *ngIf="isLoading"></mat-spinner>
 
 <mat-card style="margin-top:50px;">
@@ -13,9 +14,16 @@
      <input type="password" name="password" ngModel matInput #passwordInput="ngModel"  placeholder="password" required>
       <mat-error *ngIf="passwordInput.invalid">Please enter a Valid Password</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" *ngIf="!isLoading">Login</button>
+    <input type="submit" class="fadeIn fourth" value="Log In" *ngIf="!isLoading">
+
 
   </form>
+  <div id="formFooter">
+    <a class="underlineHover" href="#">Forgot Password?</a>
+  </div>
 
 </mat-card>
 </div>
+</div>
+
+

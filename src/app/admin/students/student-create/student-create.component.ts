@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {mimeType} from '../mime-type.validator'
+import { Student } from '../student.model';
 import {StudentService} from '../student.service';
-interface category {
+interface student {
   value: string;
   viewValue: string;
 }
@@ -19,15 +20,23 @@ export class StudentCreateComponent implements OnInit {
   private mode = 'create';
   isLoading = false;
 
-  categories: category[] = [
+  enteredTitle = '';
+
+  enteredContent = '';
+  student : Student;
+  form:FormGroup;
+  imagePreview: string;
+
+  private stuId: string;
+
+  categories: student[] = [
     {value: 'gen', viewValue: 'gen'},
     {value: 'obc', viewValue: 'obc'},
     {value: 'sc', viewValue: 'sc'},
     {value: 'st', viewValue: 'st'},
   ];
 
-  form: FormGroup;
-  imagePreview: string;
+
 
   constructor(public studentService: StudentService, public route: ActivatedRoute) { }
 
@@ -41,8 +50,34 @@ export class StudentCreateComponent implements OnInit {
       'mothername': new FormControl(null),
       'address': new FormControl(null),
       'category': new FormControl(null),
-      'class': new FormControl(null),
+      'studentclass': new FormControl(null),
       'image': new FormControl(null, { validators: [Validators.required], asyncValidators: [mimeType] })
+    });
+
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      if (paramMap.has('id')) {
+        this.mode = 'edit';
+       this.stuId = paramMap.get('id');
+        this.isLoading =true;
+      this.studentService.getStudent(this.stuId).subscribe(stuData =>{
+       this.isLoading =false;
+       this.student ={id : stuData._id,name :stuData.name,fathername:stuData.fathername,mothername:stuData.mothername,category:stuData.category ,studentclass :stuData.studentclass,address:stuData.address,imagePath :stuData.imagePath};
+       console.log(this.student.imagePath);
+       this.form.setValue({
+            'name':this.student.name ,'fathername': this.student.fathername,
+            'mothername':this.student.mothername,'category':this.student.category,'address':this.student.address,
+            'studentclass':this.student.studentclass,
+           'image':this.student.imagePath
+
+          });
+          this.imagePreview =this.student.imagePath;
+          this.form.get('image').updateValueAndValidity();
+       });
+      }
+       else {
+        this.mode = 'create';
+       this.stuId = null;
+      }
     });
 
   }
@@ -67,10 +102,10 @@ export class StudentCreateComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-     this.studentService.addStudent(this.form.value.name, this.form.value.fathername, this.form.value.mothername, this.form.value.address,this.form.value.category,this.form.value.class, this.form.value.image);
+    // this.studentService.addStudent(this.form.value.name, this.form.value.fathername, this.form.value.mothername, this.form.value.address,this.form.value.student,this.form.value.class, this.form.value.image);
     }
     else {
-      //this.categoryService.updateCategory(this.catId, this.form.value.title, this.form.value.content, this.form.value.image);
+      //this.studentService.updatestudent(this.catId, this.form.value.title, this.form.value.content, this.form.value.image);
     }
     this.form.reset();
 

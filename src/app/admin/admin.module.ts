@@ -28,6 +28,7 @@ import {AdminComponent} from './admin.component';
 import { StudentCreateComponent } from './students/student-create/student-create.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
 
   declarations :[
@@ -57,7 +58,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatCardModule,
     MatMenuModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule
 
   ]
 

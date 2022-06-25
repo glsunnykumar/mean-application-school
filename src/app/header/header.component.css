@@ -1,12 +1,11 @@
  ul{
-  list-style: square;
+  list-style: none;
   margin: 0;
   padding: 0;
+  color-scheme: initial;
+
 }
 
-ul>li>right{
-  display: flex;
-}
 
 a{
 text-decoration:none;

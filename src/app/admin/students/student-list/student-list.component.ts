@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import {MatTableModule} from '@angular/material/table';
+import {MatTableDataSource} from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import {MatDialog} from '@angular/material/dialog';
 import { StudentService } from '../student.service';
@@ -16,7 +16,8 @@ import { Student } from '../student.model';
 
 export class StudentListComponent implements OnInit {
    isLoading = false;
-   displayedColumns: string[] = ['imageUrl','Name' ,'FatherName','action'];
+   displayedColumns: string[] = ['imageUrl','Name','fathername','studentclass','action'];
+   //displayedColumns: string[] = ['imageUrl','Name' ,'FatherName','action'];
    private stuSubs: Subscription;
    dataSource =null;
 
@@ -32,11 +33,11 @@ export class StudentListComponent implements OnInit {
     this.stuSubs = this.studentService.getStudentUpdatedListner().subscribe((student: Student[]) => {
       this.isLoading = false;
       this.students = student;
-     this.dataSource = this.students;
+     this.dataSource = new MatTableDataSource<Student>(this.students);
+
+     console.log(this.students);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log('hello');
-      console.log(this.students);
     })
   }
 
