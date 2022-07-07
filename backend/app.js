@@ -13,7 +13,7 @@ const studentRoutes = require('./routes/student');
 const app = express();
 //mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false
 //mongoose.connect("mongodb+srv://mongodb:X5YZjCuGrHyiglD0@cluster0.hyyeo.mongodb.net/test?authSource=admin&replicaSet=atlas-nbn9qz-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true")
-mongoose.connect("mongodb+srv://mongodb:xncmpGswPgFYfFUD@cluster0.hyyeo.mongodb.net/test")
+mongoose.connect("mongodb+srv://mongodb:KtKvNofWFnITJYaZ@cluster0.hyyeo.mongodb.net/test")
   .then(() => {
     console.log('Connect');
   })

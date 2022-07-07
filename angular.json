@@ -92,13 +92,11 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "../node_modules/font-awesome/css/font-awesome.css"
-
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/jquery/dist/jquery.js",
               "src/admin/dashboard/dashboard.js"
-
             ]
           }
         },
@@ -130,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "mean-course"
+  "defaultProject": "mean-course",
+  "cli": {
+    "analytics": "14424039-f86c-4009-aca8-2ed702d01c41"
+  }
 }

@@ -29,6 +29,7 @@ import { StudentCreateComponent } from './students/student-create/student-create
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { StaffComponent } from './staff/staff.component';
 @NgModule({
 
   declarations :[
@@ -38,6 +39,7 @@ import { MatTableModule } from '@angular/material/table';
     DashboardmainComponent,
     StudentCreateComponent,
     StudentListComponent,
+    StaffComponent,
   ],
   imports :[
     CommonModule,
