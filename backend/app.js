@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/user');
 const studentRoutes = require('./routes/student');
+const staffRoutes = require('./routes/staff');
 
 
 
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
 app.use("/api/posts" ,postRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/students",studentRoutes);
+app.use("/api/staff",staffRoutes);
 
 
 module.exports = app;

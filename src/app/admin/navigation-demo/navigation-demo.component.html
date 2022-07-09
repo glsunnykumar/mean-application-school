@@ -8,7 +8,7 @@
         <mat-list-item routerLink="/admin/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</mat-list-item>
         <mat-list-item routerLink="#"><mat-icon>notification_important</mat-icon>Notification</mat-list-item>
         <mat-list-item routerLink="/admin/students"><mat-icon>account_circle</mat-icon>Students</mat-list-item>
-        <mat-list-item routerLink="/admin/students"><mat-icon>account_circle</mat-icon>Staff</mat-list-item>
+        <mat-list-item routerLink="/admin/staff"><mat-icon>account_circle</mat-icon>Staff</mat-list-item>
         <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
             <mat-expansion-panel-header>
                 Students
@@ -41,7 +41,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>welcome to admin panel</span>
+      <span>welcome to admin panel 1</span>
     </mat-toolbar>
   <router-outlet></router-outlet>
   </mat-sidenav-content>

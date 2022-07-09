@@ -1,0 +1,94 @@
+<mat-card>
+
+    <form [formGroup] ="form" (submit)="savestaff()" *ngIf="!isLoading">
+      <div class="row">
+        <div class="col-6">
+          <div>
+            <button mat-stroked-button (click)="filepicker.click()" type="button">Pick Image</button>
+  
+            <input type="file" #filepicker (change)="onImgePicked($event)">
+        </div>
+        <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid" >
+            <img [src]="imagePreview" [alt]="form.value.title">
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <mat-hint>upload a passport size photo</mat-hint>
+        </div>
+      </div>
+      <div class="row top-buffer">
+        <div class="col-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Add staff Name</mat-label>
+            <input matInput
+             type ="text"
+             placeholder="Add staff Name"
+             formControlName ="name">
+  
+        </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="fill">
+            <mat-label>qualification</mat-label>
+            <input matInput
+             type ="text"
+             placeholder="Add Higher Qualification"
+             formControlName ="qualification">
+  
+        </mat-form-field>
+        </div>
+  
+      </div>
+  
+  
+      <div class="row top-buffer">
+        <div class="col-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Add Testimonial</mat-label>
+            <textarea matInput 
+            placeholder="Ex. It makes me feel..."
+            formControlName ="testimonial"
+            ></textarea>
+             
+        </mat-form-field>
+        </div>
+
+        <div class="col-6">
+          <label id="example-radio-group-label">Class Incharge</label>
+          <mat-radio-group appearance="fill"  class="example-radio-group"  aria-labelledby="example-radio-group-label"  formControlName="classteacher" >
+            <mat-radio-button  value="1">9th</mat-radio-button>
+            <mat-radio-button  value="2">10th</mat-radio-button>
+            <mat-radio-button  value="3">11th</mat-radio-button>
+            <mat-radio-button  value="4">12th</mat-radio-button>
+          </mat-radio-group>
+  
+        </div>
+    
+  
+  
+  
+      </div>
+  
+  
+  
+  <div class="row top-buffer">
+    <div class="col-4">
+      <button mat-raised-button class="btn btn-primary" color="primary" type="submit">
+        {{mode =='create' ? 'Save':'Update'}}
+    </button>
+  
+  
+  </div>
+  <div class="col-4">
+    <button mat-raised-button class="btn btn-primary" color="primary" type="submit">
+      Cancel
+   </button>
+  </div>
+  </div>
+    </form>
+  
+  </mat-card>
+  
+  

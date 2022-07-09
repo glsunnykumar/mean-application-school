@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import {mimeType} from '../mime-type.validator'
+import {mimeType} from '../../mime-type.validator'
 import { Student } from '../student.model';
 import {StudentService} from '../student.service';
 interface student {
@@ -102,7 +102,7 @@ export class StudentCreateComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-    // this.studentService.addStudent(this.form.value.name, this.form.value.fathername, this.form.value.mothername, this.form.value.address,this.form.value.student,this.form.value.class, this.form.value.image);
+   // this.staffService.addStudent(this.form.value.name, this.form.value.fathername, this.form.value.mothername, this.form.value.address,this.form.value.student,this.form.value.class, this.form.value.image);
     }
     else {
       //this.studentService.updatestudent(this.catId, this.form.value.title, this.form.value.content, this.form.value.image);

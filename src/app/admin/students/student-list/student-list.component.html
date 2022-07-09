@@ -33,14 +33,13 @@
   </ng-container>
 
 
-
-  <ng-container matColumnDef="action">
+ <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef> Action </th>
     <td mat-cell *matCellDef="let element" class="action-link">
       <a mat-button color="primary" [routerLink]="['/admin/students/edit',element.id]" >Edit</a> |
       <button mat-button color="warn" (click)="confirmDialog(element.id,element.title)">Delete</button>
     </td>
-  </ng-container>
+  </ng-container> 
 
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -1,51 +1,51 @@
 import { CommonModule } from '@angular/common';
-import {NgModule} from '@angular/core';
-import {AngularMaterialMOdule} from '../angular.material.module';
-import {AdminRoutingModule} from './admin-routing.module';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { AngularMaterialMOdule } from '../angular.material.module';
+import { AdminRoutingModule } from './admin-routing.module';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavigationDemoComponent } from '../admin/navigation-demo/navigation-demo.component';
+import { DashboardmainComponent } from './dashboardmain/dashboardmain.component';
+import { AdminComponent } from './admin.component';
+import { StudentCreateComponent } from './students/student-create/student-create.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
 
-
-import {DashboardComponent} from './dashboard/dashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { NavigationDemoComponent } from '../admin/navigation-demo/navigation-demo.component';
-import { DashboardmainComponent } from './dashboardmain/dashboardmain.component';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatRadioModule} from '@angular/material/radio'
-import {AdminComponent} from './admin.component';
-import { StudentCreateComponent } from './students/student-create/student-create.component';
-import { StudentListComponent } from './students/student-list/student-list.component';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
-import { StaffComponent } from './staff/staff.component';
+import { StaffCreateComponent } from './staff/staff-create/staff-create.component';
+import { StaffListComponent } from './staff/staff-list/staff-list.component';
 @NgModule({
-
-  declarations :[
+  declarations: [
     AdminComponent,
     DashboardComponent,
     NavigationDemoComponent,
     DashboardmainComponent,
     StudentCreateComponent,
     StudentListComponent,
-    StaffComponent,
+    StaffCreateComponent,
+    StaffListComponent,
   ],
-  imports :[
-    CommonModule,
+  imports: [
+   
     AngularMaterialMOdule,
     FormsModule,
     AdminRoutingModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     MatNativeDateModule,
@@ -61,9 +61,7 @@ import { StaffComponent } from './staff/staff.component';
     MatMenuModule,
     MatSelectModule,
     MatRadioModule,
-    MatTableModule
-
-  ]
-
+    MatTableModule,
+  ],
 })
 export class AdminModule {}

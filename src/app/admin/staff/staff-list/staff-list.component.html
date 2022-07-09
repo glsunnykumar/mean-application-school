@@ -1,0 +1,56 @@
+<div id="basicScenario" class="product-physical">
+    <a mat-raised-button routerLink="/admin/staff-create" class="btn btn-primary" color="primary" type="submit">
+      Add staff
+    </a>
+  <mat-spinner *ngIf ="isLoading"></mat-spinner>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" *ngIf="!isLoading"  >
+  
+    <ng-container matColumnDef="imageUrl">
+      <th mat-header-cell *matHeaderCellDef> Image Url </th>
+      <td mat-cell *matCellDef="let element" class="post-image">
+          <img [src]="element.imagePath" />
+      </td>
+    </ng-container>
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef > Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="qualification">
+      <th mat-header-cell *matHeaderCellDef >Qualification</th>
+      <td mat-cell *matCellDef="let element"> {{element.qualification}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="classteacher">
+      <th mat-header-cell *matHeaderCellDef >Class Incharge </th>
+      <td mat-cell *matCellDef="let element"> {{element.classteacher} </td>
+    </ng-container>
+  
+  
+   <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element" class="action-link">
+        <a mat-button color="primary" [routerLink]="['/admin/staffs/edit',element.id]" >Edit</a> |
+        <button mat-button color="warn" (click)="confirmDialog(element.id,element.title)">Delete</button>
+      </td>
+    </ng-container> 
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <!-- Angular 8 pagination -->
+  
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  
+  
+  
+  </div>
+  

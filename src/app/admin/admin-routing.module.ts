@@ -1,37 +1,32 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardmainComponent } from './dashboardmain/dashboardmain.component';
 import { NavigationDemoComponent } from './navigation-demo/navigation-demo.component';
+import { StaffCreateComponent } from './staff/staff-create/staff-create.component';
+import { StaffListComponent } from './staff/staff-list/staff-list.component';
 import { StudentCreateComponent } from './students/student-create/student-create.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 
-
-const routes :Routes =[
+const routes: Routes = [
   {
-     path:'',
-     component :NavigationDemoComponent,
-  children :[
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  {path:'dashboard' , component:DashboardmainComponent},
-  {path:'navigation', component:DashboardmainComponent},
-  {path:'student-create', component:StudentCreateComponent},
-  {path:'students', component:StudentListComponent},
-  {path :'students/edit/:id', component:StudentCreateComponent},
-  ]
-}
-]
-
+    path: '',
+    component: NavigationDemoComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardmainComponent },
+      { path: 'navigation', component: DashboardmainComponent },
+      { path: 'student-create', component: StudentCreateComponent },
+      { path: 'students', component: StudentListComponent },
+      { path: 'students/edit/:id', component: StudentCreateComponent },
+      { path: 'staff-create', component: StaffCreateComponent },
+      { path: 'staff', component: StaffListComponent },
+      { path: 'staff/edit/:id', component: StaffCreateComponent },
+    ],
+  },
+];
 
 @NgModule({
-
-  imports :[
-    RouterModule.forChild(routes)
-  ],
-  exports :[RouterModule]
-
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class AdminRoutingModule {
-
-}
+export class AdminRoutingModule {}
