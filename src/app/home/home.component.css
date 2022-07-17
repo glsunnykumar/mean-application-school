@@ -56,6 +56,18 @@
   letter-spacing: -.05rem;
 }
 
+.row {
+  display: table;
+}
+
+[class*="col-"] {
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.top-buffer { margin-top:20px; }
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

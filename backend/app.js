@@ -8,6 +8,8 @@ const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/user');
 const studentRoutes = require('./routes/student');
 const staffRoutes = require('./routes/staff');
+const slideRoutes = require('./routes/slide');
+const noticeRoutes = require('./routes/notice');
 
 
 
@@ -22,6 +24,7 @@ mongoose.connect("mongodb+srv://mongodb:KtKvNofWFnITJYaZ@cluster0.hyyeo.mongodb.
     console.log('Connection to db is failed');
   })
   ;
+  
 
 app.use(bodyParser.json());
 app.use("/images",express.static("backend/images"));
@@ -36,6 +39,8 @@ app.use("/api/posts" ,postRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/students",studentRoutes);
 app.use("/api/staff",staffRoutes);
+app.use("/api/slides",slideRoutes);
+app.use("/api/notices" , noticeRoutes);
 
 
 module.exports = app;

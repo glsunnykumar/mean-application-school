@@ -1,0 +1,24 @@
+.top-buffer { margin-top:20px; }
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-hint{
+  color:red;
+}
+
+.mat-radio-button .mat-radio-button {
+  margin-left: 16px;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}

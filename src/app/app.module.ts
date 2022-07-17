@@ -19,7 +19,7 @@ import { ActivityComponent } from './activity/activity.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import {GalleryService} from './gallery/gallery.service';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import {GalleryService} from './gallery/gallery.service';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialMOdule,
-    PostsModule
+    PostsModule,
+    MatTabsModule
 
   ],
   providers: [

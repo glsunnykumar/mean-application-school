@@ -27,8 +27,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs';
 import { StaffCreateComponent } from './staff/staff-create/staff-create.component';
 import { StaffListComponent } from './staff/staff-list/staff-list.component';
+import { NoticeCreateComponent } from './notice/notice-create/notice-create.component';
+import { NoticeListComponent } from './notice/notice-list/notice-list.component';
+import { TopsliderCreateComponent } from './topslide/topslider-create/topslider-create.component';
+import { TopsliderListComponent } from './topslide/topslider-list/topslider-list.component';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -39,6 +44,10 @@ import { StaffListComponent } from './staff/staff-list/staff-list.component';
     StudentListComponent,
     StaffCreateComponent,
     StaffListComponent,
+    NoticeCreateComponent,
+    NoticeListComponent,
+    TopsliderCreateComponent,
+    TopsliderListComponent,
   ],
   imports: [
    
@@ -62,6 +71,7 @@ import { StaffListComponent } from './staff/staff-list/staff-list.component';
     MatSelectModule,
     MatRadioModule,
     MatTableModule,
+    MatTabsModule
   ],
 })
 export class AdminModule {}
